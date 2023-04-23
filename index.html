@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./assets/style/main.css">
+    <link rel="stylesheet" href="./assets/Remixicon/remixicon.css">
+
+    <title>Music Player</title>
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <p class="logo">Music</p>
+            <div class="time" >Time</div>
+        </header>
+        <div class="menu-box">
+            <i class="ri-menu-2-line""></i>
+            <ul>
+                <li><a href="https://javokhir0729.vercel.app">Main Web site</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="volume">
+                <i class="ri-volume-up-line"></i>
+                <!-- <i class="ri-volume-down-line"></i> -->
+                <input id="vol-control" type="range" min="0" max="100" step="1" value="85"  oninput="setVolume(this.value)" onchange="setVolume(this.value)"></input>
+            </div>
+        </div>
+        <section class="recommend">
+            <h2>Album...</h2>
+            <div class="recom-box">
+                <div class="item"> <p>Top 10</p>  <img src="./assets/images/top10.jpeg" alt=""> </div>
+                <div class="item"> <p>Miyagi & Andy Panda</p>  <img src="./assets/images/miyagi.jpg" alt=""> </div>
+                <div class="item"> <p>Uzbek music</p>  <img src="./assets/images/uzbek.jpg" alt=""> </div>
+                <div class="item"> <p>Classic</p>  <img src="./assets/images/classic_muisc.jpg" alt=""> </div>
+                <div class="item"> <p>World</p>  <img src="./assets/images/world.jpg" alt=""> </div>
+                <div class="item"> <p>Popular</p>  <img src="./assets/images/yevro.jpg" alt=""> </div>
+            </div>
+        </section>
+
+        <section class="music-list" >
+            <h2>Music. Enjoy it</h2>
+            <div id="album-music">
+                <!-- <div class="music-box"> <img src="./assets/images/miyagi.jpg" class="music-box-image" > <p class="MusicArtist">Music Name</p><p class="MusicTime">curr time / mus time</p> <audio src="./assets/music/Miyagi - Andy Panda - Бэйба судьба.mp3" class="Music"></audio></div> -->
+               
+            </div>
+
+        </section>
+    </div>
+    <!-- <script src="./assets/js/listofmusic.js"></script> -->
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

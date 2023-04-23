@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:ital,wght@0,700;0,800;1,900&family=Source+Code+Pro:wght@700;900&display=swap');
+
+
+/* Auto settings */
+/* 
+
+font-family: 'Caveat', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Source Code Pro', monospace;
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #e8e2e2;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #121212;
+    display: flex;
+}
+header{
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    place-items: center;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+
+
+}
+.logo{
+    font-size: 3.4em;
+    font-weight: 900;
+    letter-spacing: 3px;
+    line-height: 40px;
+}
+
+.menu-box{
+    width: 20%;
+    background: #26242484;
+    height: 100vh;
+    overflow: hidden;
+    text-align:start;
+    padding: 10em 0 5em 3em;
+    font-size: 30px;
+    /* position: fixed; */
+    transition: 0.7s all;
+}
+.menu-box:hover ul li a{
+    color:#ffffff96 ;
+}
+.ri-menu-2-line{
+    display: none;
+}
+.volume{
+    position: absolute;
+    bottom: 5em;
+    display: flex;
+    place-items: center;
+}
+.ri-volume-up-line{
+    margin-right: 30px;
+    font-size: 2.5em;
+}
+#vol-control{
+    width: 200px;
+    background:#fff;
+    height:10px;
+    border-radius: 10px;
+}
+#vol-control::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background:rgb(89, 255, 0);
+    height:20px;
+    width:20px;
+    border-radius: 50%;
+}
+.menu-box ul li{
+    list-style: none;
+    margin-top: 20px;
+}
+.menu-box ul li a{
+    text-decoration: none;
+    font-size: 1.4em;
+    transition: 0.7s;
+}
+.menu-box ul li a:hover{
+    text-decoration:line-through;
+    font-size: 1.8em;
+    color: #fff;
+}
+
+
+.recommend{
+    width:40%;
+    height:90%;
+    /* background: #fff; */
+    padding: 150px 0 0 100px;
+}
+
+.recommend h2{
+    font-size: 3.5em;
+    letter-spacing: 10px;
+}
+
+.recom-box{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    padding-top: 50px;
+    /* overflow: scroll; */
+    grid-template-columns: 1fr 1fr;
+}
+
+.recom-box .item p{
+    font-size: 1.7em;
+}
+.recom-box .item img{
+    width: 210px;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+.music-list{
+    width: 40%;
+    height: 90%;
+    padding-top: 150px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.music-list h2{
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+.music-box{
+    width: 90%;
+    padding: 5px 20px;
+    height: 60px;
+    border-radius: 20px;
+    background: #ffffffa1;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    place-items: center;
+    margin-top: 20px;
+}
+.music-box-image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.MusicArtist{
+    color: #000 !important;
+    font-size: 1em;
+    font-weight: bold;
+}

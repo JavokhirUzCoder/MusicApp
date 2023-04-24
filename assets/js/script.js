@@ -1,10 +1,12 @@
 listOfMusic = [
     ["Miyagi & Andy Panda", "Патрон", "./assets/music/Miyagi - Andy Panda - Патрон.mp3"],
     ["Miyagi & Andy Panda", "Бэйба судьба", "./assets/music/Miyagi - Andy Panda - Бэйба судьба.mp3"],
-
+    // ["Miyagi & Andy Panda", "", "./assets/music/Miyagi - Andy Panda - Бэйба судьба.mp3"],
+    
 ];
 
 let albumMusic = document.getElementById('album-music');
+let volume = document.getElementById('vol-control');
 
 function changeTime(time){
     var sec= new Number();
@@ -23,8 +25,12 @@ for (var i = 0; i <listOfMusic.length; i++) {
     let MusicBox = document.createElement('div');
     MusicBox.className = 'music-box';
 
-    let MusicBoxImage = document.createElement('img');
+    let MusicBoxImage = document.createElement('div');
     MusicBoxImage.className ='music-box-image';
+    let btn = document.createElement('i');
+    btn.className ='ri-play-line';
+    // ri-pause-fill
+    
 
     let MusicBoxTitle = document.createElement('p');
     MusicBoxTitle.className = 'MusicArtist'
@@ -32,11 +38,11 @@ for (var i = 0; i <listOfMusic.length; i++) {
     MusicBoxTime.className = 'MusicTime';
     let Music = document.createElement('audio');
 
-    MusicBoxImage.src = './assets/images/miyagi.jpg';
+
+    // MusicBoxImage= './assets/images/miyagi.jpg';
     MusicBoxTitle.innerText = listOfMusic[i][0] + ' - ' + listOfMusic[i][1];
-    Music.src = listOfMusic[i][2];
-
-
+    
+    
 
 
     albumMusic.appendChild(MusicBox);
@@ -44,24 +50,40 @@ for (var i = 0; i <listOfMusic.length; i++) {
     MusicBox.appendChild(MusicBoxTitle);
     MusicBox.appendChild(MusicBoxTime);
     MusicBox.appendChild(Music);
-
-    setTimeout(function(){
-        MusicBoxTime.innerText = changeTime(Music.currentTime)+ "/" + changeTime(Music.duration);
-        
-    } ,500);
-
-
+    MusicBoxImage.appendChild(btn);
+    
+    Music.src = listOfMusic[i][2];
+    
+    
     MusicBoxImage.addEventListener('click', function(){
         if(Music.paused ==true){
             Music.pause();
             Music.play();
-            setInterval(function(){
-                MusicBoxTime.innerText = changeTime(Music.currentTime)+ "/" + changeTime(Music.duration);
-            },500)
+            // setInterval(function(){
+            //     MusicBoxTime.innerText = changeTime(Music.currentTime)+ "/" + changeTime(Music.duration);
+            // },500)
+            btn.className ='ri-pause-fill';
+
         }else{
+            btn.className ='ri-play-line';
             Music.pause();
         }
     })
+    
+    setInterval(()=>{
+        var currentdate = new Date();
+        var datetime = "TIme: "+  currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+        document.querySelector(".time").innerText = datetime;
+        MusicBoxTime.innerText = changeTime(Music.currentTime)+ "/" + changeTime(Music.duration);
+    },500)
+    
 }
 
+volume.addEventListener('input', function(e){
+    albumMusic.volume  = e.value
+})
+
+volume.addEventListener('change', function(e){
+    albumMusic.volume  = e.value
+})
 
